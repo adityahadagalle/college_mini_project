@@ -1,0 +1,88 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "title": "API Inference Latency (P95 ms)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "targets": [
+        {
+          "expr": "prediction_latency_seconds * 1000",
+          "legendFormat": "P95 Latency (ms)"
+        }
+      ]
+    },
+    {
+      "title": "Prediction Request Volume",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "targets": [
+        {
+          "expr": "rate(prediction_count[5m])",
+          "legendFormat": "Requests / sec"
+        }
+      ]
+    },
+    {
+      "title": "System CPU & RAM Utilization (%)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "targets": [
+        {
+          "expr": "process_cpu_seconds_total",
+          "legendFormat": "CPU Usage (%)"
+        }
+      ]
+    },
+    {
+      "title": "Batch Throughput (Rows / sec)",
+      "type": "stat",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "targets": [
+        {
+          "expr": "batch_jobs_total",
+          "legendFormat": "Batch Throughput"
+        }
+      ]
+    },
+    {
+      "title": "Active SaaS User Sessions",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 0, "y": 16 },
+      "targets": [
+        {
+          "expr": "active_users",
+          "legendFormat": "Active Sessions"
+        }
+      ]
+    },
+    {
+      "title": "API Error Rate (%)",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 6, "y": 16 },
+      "targets": [
+        {
+          "expr": "(api_errors_total / api_requests_total) * 100",
+          "legendFormat": "Error Rate %"
+        }
+      ]
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["mlops", "sentiment-ai", "monitoring"],
+  "time": { "from": "now-6h", "to": "now" },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "SentimentAI Enterprise MLOps & Observability Dashboard",
+  "version": 1
+}

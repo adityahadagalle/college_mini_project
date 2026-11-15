@@ -1,0 +1,21 @@
+name: Sentiment Platform CI/CD Pipeline (Deployment Mirror)
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  ci-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Test & Validate
+        run: |
+          pip install -r backend/requirements.txt
+          PYTHONPATH=backend pytest tests/

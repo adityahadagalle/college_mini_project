@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-11-15T05:21:23Z",
+  "hardware": {
+    "active_device": "CPU (Intel/AMD x86_64)",
+    "cuda_available": false,
+    "logical_cpus": 12,
+    "physical_cpus": 8,
+    "total_ram_gb": 15.68,
+    "process_rss_mb": 2935.06,
+    "active_vram_mb": 0.0,
+    "theoretical_rtx3050_vram_fp16_mb": 1370.0
+  },
+  "cold_load_times_ms": {
+    "tensorflow_bilstm_graph": 2.63,
+    "absa_deberta_pipeline": 211.85,
+    "emotion_roberta_pipeline": 57.37,
+    "topic_minilm_embeddings": 15.39
+  },
+  "warm_single_review_latency": {
+    "overall_sentiment_tf": {
+      "mean_ms": 0.14,
+      "p50_ms": 0.12,
+      "p95_ms": 0.18,
+      "min_ms": 0.11,
+      "max_ms": 0.37
+    },
+    "absa_deberta": {
+      "mean_ms": 532.19,
+      "p50_ms": 502.91,
+      "p95_ms": 672.7,
+      "min_ms": 442.09,
+      "max_ms": 756.39
+    },
+    "emotion_roberta": {
+      "mean_ms": 60.79,
+      "p50_ms": 51.9,
+      "p95_ms": 89.51,
+      "min_ms": 46.25,
+      "max_ms": 92.01
+    },
+    "topic_projection_cpu": {
+      "mean_ms": 14.08,
+      "p50_ms": 12.15,
+      "p95_ms": 22.39,
+      "min_ms": 10.34,
+      "max_ms": 29.48
+    },
+    "combined_unified_intelligence": {
+      "mean_ms": 528.14,
+      "p50_ms": 493.51,
+      "p95_ms": 671.66,
+      "min_ms": 438.13,
+      "max_ms": 720.18
+    }
+  },
+  "batch_throughput_batch16": {
+    "sample_count": 16,
+    "total_time_seconds": 4.305,
+    "throughput_reviews_per_sec": 3.72,
+    "throughput_model_predictions_per_sec": 14.87
+  },
+  "cpu_embedding_and_cache": {
+    "cold_embedding_generation_ms": 8.88,
+    "warm_sha256_cache_fetch_ms": 4.31,
+    "cache_speedup_factor": 2.06
+  },
+  "cross_feature_sql_analytics": {
+    "mean_ms": 8.51,
+    "p50_ms": 7.98,
+    "p95_ms": 12.72,
+    "min_ms": 5.4,
+    "max_ms": 22.54
+  }
+}

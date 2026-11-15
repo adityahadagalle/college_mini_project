@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  gateway:
+    image: nginx:1.25-alpine
+    container_name: sentiment_gateway
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      backend:
+        condition: service_healthy
+      frontend:
+        condition: service_started
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    container_name: sentiment_frontend
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: sentiment_backend
+    environment:
+      - ENVIRONMENT=production
+      - DATABASE_URL=sqlite:///./sentiment.db
+      - SECRET_KEY=PRODUCTION_SECRET_KEY_CHANGE_THIS_IN_ENV_FILE_32_BYTES_MIN
+      - ALLOWED_ORIGINS=http://localhost,http://127.0.0.1
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health/system"]
+      interval: 10s
+      timeout: 5s
+      retries: 3

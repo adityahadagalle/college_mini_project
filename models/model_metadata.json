@@ -1,0 +1,14 @@
+{
+  "model_version": "v3.0.0",
+  "architecture": "DistilBertForSequenceClassification",
+  "parameter_count": 66955779,
+  "accuracy": 0.9591,
+  "precision": 0.9439,
+  "recall": 0.962,
+  "f1_score": 0.952,
+  "negation_subset_accuracy": 0.9615,
+  "max_sequence_length": 64,
+  "training_samples": 1025,
+  "validation_samples": 171,
+  "training_date": "2026-11-15 13:12:33 UTC"
+}

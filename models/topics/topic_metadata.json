@@ -1,0 +1,39 @@
+{
+  "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+  "version": "v1.0.0",
+  "architecture": "all-MiniLM-L6-v2 + UMAP + HDBSCAN + c-TF-IDF",
+  "device": "cpu",
+  "vram_usage_mb": 0.0,
+  "embedding_dimension": 384,
+  "min_reviews_threshold": 15,
+  "encoding_throughput_docs_per_sec": 88.87,
+  "benchmark_corpus_size": 40,
+  "benchmark_comparison": {
+    "UMAP+HDBSCAN": {
+      "num_clusters": 5,
+      "silhouette_score": 0.1569,
+      "intra_cluster_cohesion": 0.6316,
+      "keyword_diversity": 1.0,
+      "outlier_ratio": 0.1,
+      "latency_ms": 42502.92
+    },
+    "KMeans_k5": {
+      "num_clusters": 5,
+      "silhouette_score": 0.116,
+      "intra_cluster_cohesion": 0.6126,
+      "keyword_diversity": 0.975,
+      "outlier_ratio": 0.0,
+      "latency_ms": 225.03
+    },
+    "Agglomerative_k5": {
+      "num_clusters": 5,
+      "silhouette_score": 0.1332,
+      "intra_cluster_cohesion": 0.6397,
+      "keyword_diversity": 1.0,
+      "outlier_ratio": 0.0,
+      "latency_ms": 259.28
+    }
+  },
+  "selected_algorithm": "UMAP+HDBSCAN",
+  "rationale": "HDBSCAN naturally isolates noise/outliers without forcing arbitrary cluster counts, while maintaining high intra-cluster cohesion and keyword diversity with c-TF-IDF."
+}

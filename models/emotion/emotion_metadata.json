@@ -1,0 +1,317 @@
+{
+  "model_name": "RoBERTa-GoEmotions-MultiLabel",
+  "version": "v1.0.0",
+  "framework": "PyTorch / Hugging Face Transformers",
+  "architecture": "RoBERTa-base Multi-Label Sequence Classifier (28 Sigmoid heads)",
+  "task_formulation": "Multi-Label Classification with Binary Cross-Entropy Loss",
+  "benchmark_dataset": "Google Research GoEmotions Test Split (150 evaluated sentences)",
+  "license": "Apache 2.0",
+  "evaluation_date": "2026-11-14",
+  "hardware_profile": "NVIDIA GeForce RTX 3050 Laptop GPU (4 GB VRAM) / Intel CPU FP32/FP16 Fallback",
+  "calibrated_thresholds": {
+    "admiration": 0.4,
+    "amusement": 0.15,
+    "anger": 0.6,
+    "annoyance": 0.2,
+    "approval": 0.45,
+    "caring": 0.15,
+    "confusion": 0.25,
+    "curiosity": 0.15,
+    "desire": 0.15,
+    "disappointment": 0.4,
+    "disapproval": 0.4,
+    "disgust": 0.15,
+    "embarrassment": 0.15,
+    "excitement": 0.35,
+    "fear": 0.15,
+    "gratitude": 0.2,
+    "grief": 0.15,
+    "joy": 0.35,
+    "love": 0.35,
+    "nervousness": 0.35,
+    "optimism": 0.2,
+    "pride": 0.35,
+    "realization": 0.15,
+    "relief": 0.15,
+    "remorse": 0.15,
+    "sadness": 0.55,
+    "surprise": 0.45,
+    "neutral": 0.3
+  },
+  "metrics": {
+    "micro_f1": 0.5895,
+    "macro_f1": 0.3714,
+    "hamming_loss": 0.0371,
+    "expected_calibration_error": 0.0079,
+    "mean_brier_score": 0.0239,
+    "per_class": {
+      "admiration": {
+        "precision": 0.7,
+        "recall": 0.6364,
+        "f1": 0.6667,
+        "support": 11,
+        "threshold": 0.4,
+        "brier": 0.0368
+      },
+      "amusement": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10,
+        "threshold": 0.15,
+        "brier": 0.0044
+      },
+      "anger": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "support": 4,
+        "threshold": 0.6,
+        "brier": 0.0202
+      },
+      "annoyance": {
+        "precision": 0.2,
+        "recall": 0.2,
+        "f1": 0.2,
+        "support": 10,
+        "threshold": 0.2,
+        "brier": 0.0589
+      },
+      "approval": {
+        "precision": 0.5,
+        "recall": 0.3333,
+        "f1": 0.4,
+        "support": 6,
+        "threshold": 0.45,
+        "brier": 0.0328
+      },
+      "caring": {
+        "precision": 0.3333,
+        "recall": 0.4,
+        "f1": 0.3636,
+        "support": 5,
+        "threshold": 0.15,
+        "brier": 0.025
+      },
+      "confusion": {
+        "precision": 0.4,
+        "recall": 0.8,
+        "f1": 0.5333,
+        "support": 5,
+        "threshold": 0.25,
+        "brier": 0.0224
+      },
+      "curiosity": {
+        "precision": 0.4286,
+        "recall": 1.0,
+        "f1": 0.6,
+        "support": 6,
+        "threshold": 0.15,
+        "brier": 0.0199
+      },
+      "desire": {
+        "precision": 0.125,
+        "recall": 0.25,
+        "f1": 0.1667,
+        "support": 4,
+        "threshold": 0.15,
+        "brier": 0.025
+      },
+      "disappointment": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2,
+        "threshold": 0.4,
+        "brier": 0.0155
+      },
+      "disapproval": {
+        "precision": 0.2857,
+        "recall": 0.1818,
+        "f1": 0.2222,
+        "support": 11,
+        "threshold": 0.4,
+        "brier": 0.056
+      },
+      "disgust": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1,
+        "threshold": 0.15,
+        "brier": 0.0119
+      },
+      "embarrassment": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0,
+        "threshold": 0.15,
+        "brier": 0.0019
+      },
+      "excitement": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2,
+        "threshold": 0.35,
+        "brier": 0.0126
+      },
+      "fear": {
+        "precision": 0.8333,
+        "recall": 0.7143,
+        "f1": 0.7692,
+        "support": 7,
+        "threshold": 0.15,
+        "brier": 0.0209
+      },
+      "gratitude": {
+        "precision": 0.8182,
+        "recall": 1.0,
+        "f1": 0.9,
+        "support": 9,
+        "threshold": 0.2,
+        "brier": 0.0035
+      },
+      "grief": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0,
+        "threshold": 0.15,
+        "brier": 0.0
+      },
+      "joy": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4,
+        "threshold": 0.35,
+        "brier": 0.0263
+      },
+      "love": {
+        "precision": 0.5,
+        "recall": 0.7778,
+        "f1": 0.6087,
+        "support": 9,
+        "threshold": 0.35,
+        "brier": 0.0368
+      },
+      "nervousness": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0,
+        "threshold": 0.35,
+        "brier": 0.0004
+      },
+      "optimism": {
+        "precision": 0.8,
+        "recall": 0.4444,
+        "f1": 0.5714,
+        "support": 9,
+        "threshold": 0.2,
+        "brier": 0.0369
+      },
+      "pride": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0,
+        "threshold": 0.35,
+        "brier": 0.0
+      },
+      "realization": {
+        "precision": 0.3333,
+        "recall": 0.3333,
+        "f1": 0.3333,
+        "support": 3,
+        "threshold": 0.15,
+        "brier": 0.0189
+      },
+      "relief": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0,
+        "threshold": 0.15,
+        "brier": 0.0
+      },
+      "remorse": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "support": 3,
+        "threshold": 0.15,
+        "brier": 0.0081
+      },
+      "sadness": {
+        "precision": 0.5,
+        "recall": 0.25,
+        "f1": 0.3333,
+        "support": 4,
+        "threshold": 0.55,
+        "brier": 0.0106
+      },
+      "surprise": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571,
+        "support": 4,
+        "threshold": 0.45,
+        "brier": 0.0082
+      },
+      "neutral": {
+        "precision": 0.6562,
+        "recall": 0.8077,
+        "f1": 0.7241,
+        "support": 52,
+        "threshold": 0.3,
+        "brier": 0.1543
+      }
+    },
+    "baseline_comparison": {
+      "baseline_type": "Label Frequency Prior Baseline",
+      "micro_f1": 0.3142,
+      "macro_f1": 0.0184,
+      "hamming_loss": 0.054,
+      "f1_improvement_pct": 87.61
+    },
+    "sample_count": 150
+  },
+  "cx_taxonomy_mapping": {
+    "anger": "Frustration / Anger",
+    "annoyance": "Frustration / Anger",
+    "disgust": "Frustration / Anger",
+    "disappointment": "Disappointment",
+    "disapproval": "Disappointment",
+    "remorse": "Disappointment",
+    "sadness": "Disappointment",
+    "embarrassment": "Disappointment",
+    "grief": "Disappointment",
+    "joy": "Delight / Excitement",
+    "excitement": "Delight / Excitement",
+    "amusement": "Delight / Excitement",
+    "love": "Delight / Excitement",
+    "optimism": "Delight / Excitement",
+    "surprise": "Delight / Excitement",
+    "admiration": "Satisfaction / Gratitude",
+    "approval": "Satisfaction / Gratitude",
+    "gratitude": "Satisfaction / Gratitude",
+    "relief": "Satisfaction / Gratitude",
+    "pride": "Satisfaction / Gratitude",
+    "caring": "Satisfaction / Gratitude",
+    "confusion": "Hesitation / Confusion",
+    "curiosity": "Hesitation / Confusion",
+    "nervousness": "Hesitation / Confusion",
+    "fear": "Hesitation / Confusion",
+    "desire": "Hesitation / Confusion",
+    "neutral": "Neutral / Informative",
+    "realization": "Neutral / Informative"
+  },
+  "domain_mismatch_analysis": {
+    "source_domain": "Reddit comment threads (conversational, colloquial, internet slang)",
+    "target_domain": "Customer and product feedback reviews (hardware quality, returns, shipping)",
+    "mitigation_strategy": "Per-class calibrated thresholds tuned on validation split + 6-category CX taxonomy rollup"
+  }
+}
