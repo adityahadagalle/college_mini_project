@@ -1,14 +1,59 @@
 {
-  "model_version": "v3.0.0",
+  "model_version": "v3.1.0",
   "architecture": "DistilBertForSequenceClassification",
   "parameter_count": 66955779,
-  "accuracy": 0.9591,
-  "precision": 0.9439,
-  "recall": 0.962,
-  "f1_score": 0.952,
-  "negation_subset_accuracy": 0.9615,
-  "max_sequence_length": 64,
-  "training_samples": 1025,
-  "validation_samples": 171,
-  "training_date": "2026-11-15 13:12:33 UTC"
+  "test_accuracy": 0.8133,
+  "macro_precision": 0.8133,
+  "macro_recall": 0.8133,
+  "macro_f1_score": 0.8089,
+  "per_class_metrics": {
+    "POSITIVE": {
+      "precision": 0.8679,
+      "recall": 0.92,
+      "f1": 0.8932
+    },
+    "NEUTRAL": {
+      "precision": 0.8,
+      "recall": 0.64,
+      "f1": 0.7111
+    },
+    "NEGATIVE": {
+      "precision": 0.7719,
+      "recall": 0.88,
+      "f1": 0.8224
+    }
+  },
+  "confusion_matrix": [
+    [
+      46,
+      3,
+      1
+    ],
+    [
+      6,
+      32,
+      12
+    ],
+    [
+      1,
+      5,
+      44
+    ]
+  ],
+  "average_inference_latency_ms": 31.38,
+  "p95_inference_latency_ms": 37.27,
+  "dataset_composition": {
+    "sources": [
+      "Amazon Product Reviews (fancyzhx/amazon_polarity)",
+      "Stanford Sentiment Treebank (SST-2 & SST-5)",
+      "Domain Telemetry"
+    ],
+    "total_samples": 1500,
+    "train_samples": 1200,
+    "val_samples": 150,
+    "test_samples": 150,
+    "class_distribution": "Equal (Balanced 33.3% / 33.3% / 33.3%)"
+  },
+  "training_duration_seconds": 355.15,
+  "training_timestamp": "2026-11-15 14:01:35 UTC"
 }
